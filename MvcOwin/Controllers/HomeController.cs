@@ -13,6 +13,7 @@ namespace MvcOwin.Controllers
             return View();
         }
 
+        [Authorize(Roles="Employee,User")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,9 +21,10 @@ namespace MvcOwin.Controllers
             return View();
         }
 
+        [Authorize(Roles="Admin")]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = $"Your contact page, {HttpContext.User.Identity.Name}.";
 
             return View();
         }

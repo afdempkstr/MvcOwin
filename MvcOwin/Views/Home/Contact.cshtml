@@ -3,6 +3,10 @@
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
+<p>@if (HttpContext.Current.User.IsInRole("Admin"))
+   {
+       @Html.Partial("~/Views/Partials/Partial.cshtml")
+   }</p>
 
 <address>
     One Microsoft Way<br />
