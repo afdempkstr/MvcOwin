@@ -12,5 +12,14 @@ namespace MvcOwin.Models
         public string Username { get; set; }
 
         public string Password { get; set; }
+
+        public DateTimeOffset Registered { get; set; }
+
+        public List<Role> Roles { get; }
+
+        public User()
+        {
+            Roles = new List<Role>();
+        }
     }
 }
